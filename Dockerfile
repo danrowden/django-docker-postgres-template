@@ -14,4 +14,4 @@ COPY . .
 # Expose port 8023 for Django
 EXPOSE 8024
 
-CMD ["sh", "-c", "python manage.py migrate && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 4"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn app.wsgi:application --bind 0.0.0.0:$PORT --workers 4"]
